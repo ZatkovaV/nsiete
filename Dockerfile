@@ -60,5 +60,6 @@ EXPOSE 8888
 EXPOSE 6006
 
 RUN ${PYTHON} -m ipykernel.kernelspec
+RUN ${PYTHON} -m nltk.downloader -d /usr/local/share/nltk_data all
 
 CMD ["bash", "-c", "source /etc/bash.bashrc && jupyter notebook --notebook-dir=/labs --ip 0.0.0.0 --no-browser --allow-root"]
